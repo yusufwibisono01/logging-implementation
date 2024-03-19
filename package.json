@@ -15,7 +15,7 @@
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.25",
     "express": "^4.18.3",
-    "logging": "github:leasingHero/logging#feature/convert-as-module",
+    "logging": "github:leasingHero/logging",
     "prettier": "^3.2.5"
   },
   "prettier": {
