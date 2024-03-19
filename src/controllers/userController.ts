@@ -12,7 +12,7 @@ export class UserController {
     getUser(req: Request, res: Response) {
         const userId = req.params.id;
 
-        // proof that still follows the correlation id
+        // setTimeout to proof that still follows the correlation id
         setTimeout(() => {
             logger.log.info('from controller', userId);
         }, 5000);
