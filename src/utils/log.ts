@@ -1,11 +1,11 @@
-import { InitLogging, Logger } from 'logging';
+import { InitLogging, Logger, InitMiddleware, Middleware } from 'logging';
 
 class Logging {
-    log: Logger = new InitLogging()
-        .withRedaction(['password', 'token'])
-        .withFormatter('pino-pretty')
-        .withLevel('info')
-        .initialize();
+    log = new InitLogging()
+    .withRedaction(['password', 'token'])
+    .withFormatter('pino-pretty')
+    .withLevel('info')
+    .initialize();
 }
 
 const logger = new Logging();

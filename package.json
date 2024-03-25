@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"**/*.ts\"",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node dist/server.js"
   },
   "keywords": [],
   "author": "",
