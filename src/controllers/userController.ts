@@ -1,4 +1,4 @@
-import logger from '../utils/log';
+import mlog from '../utils/mlog';
 import { Request, Response } from 'express';
 import { UserService } from '../services/userService';
 
@@ -14,7 +14,7 @@ export class UserController {
 
         // setTimeout to proof that still follows the correlation id
         setTimeout(() => {
-            logger.log.info('from controller', userId);
+            mlog.info('from controller', userId);
         }, 5000);
 
         const user = this.userService.getUserById(userId);

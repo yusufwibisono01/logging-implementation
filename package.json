@@ -15,15 +15,28 @@
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.25",
     "express": "^4.18.3",
-    "logging": "github:leasingHero/logging",
+    "logging": "bitbucket:moladinTech/mofi-logger-lib",
     "prettier": "^3.2.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
   },
   "prettier": {
     "singleQuote": true,
     "tabWidth": 4
   },
-  "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+  "nyc": {
+    "lines": 50,
+    "statements": 50,
+    "functions": 50,
+    "branches": 20,
+    "check-coverage": true,
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary",
+      "html"
+    ]
   }
 }

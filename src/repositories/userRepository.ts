@@ -1,8 +1,8 @@
-import logger from '../utils/log';
+import mlog from '../utils/mlog';
 
 export class UserRepository {
     findById(userId: string): string {
-        logger.log.info('from repository', userId);
+        mlog.info('from repository', userId);
         return userId;
     }
 }

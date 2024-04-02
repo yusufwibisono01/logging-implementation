@@ -1,4 +1,4 @@
-import logger from '../utils/log';
+import mlog from '../utils/mlog';
 
 import { UserRepository } from '../repositories/userRepository';
 
@@ -10,7 +10,7 @@ export class UserService {
     }
 
     getUserById(userId: string) {
-        logger.log.info('from service', userId);
+        mlog.info('from service', userId);
         return this.userRepository.findById(userId);
     }
 }
