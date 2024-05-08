@@ -12,10 +12,8 @@ export class UserController {
     getUser(req: Request, res: Response) {
         const userId = req.params.id;
 
-        // setTimeout to proof that still follows the correlation id
-        setTimeout(() => {
-            mlog.info('from controller', userId);
-        }, 5000);
+        mlog.info('from controller', userId);
+        console.log('get trace id from controller', mlog.getTraceId());
 
         const user = this.userService.getUserById(userId);
         if (user) {

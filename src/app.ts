@@ -17,7 +17,26 @@ app.use((req, res, next) => {
 });
 
 app.get('/users/:id', (req, res) => {
+    if (req.headers['x-trace-id']) {
+        console.log('Request ID:', req.headers['x-trace-id']);
+    }
+    console.log(req.headers);
     userController.getUser(req, res);
 });
+
+app.get('/memory-usage', (req, res) => {
+    const memoryUsage = process.memoryUsage();
+    const memoryUsageInMB = {
+        rss: convertToMB(memoryUsage.rss),
+        heapTotal: convertToMB(memoryUsage.heapTotal),
+        heapUsed: convertToMB(memoryUsage.heapUsed),
+        external: convertToMB(memoryUsage.external),
+    };
+    res.json(memoryUsageInMB);
+});
+
+function convertToMB(bytes: number): number {
+    return Math.round(bytes / 1024 / 1024);
+}
 
 export default app;
